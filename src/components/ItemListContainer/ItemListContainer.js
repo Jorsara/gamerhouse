@@ -11,7 +11,7 @@ function ItemListContainer (props) {
             <Row>
                 <Col className="text-center">
                     <h1>{props.greeting}</h1>
-                    <ItemCount stock="5" initial="1" onAdd={() => onAdd()}/>
+                    <ItemCount stock="5" initial={1} onAdd={() => onAdd()}/>
                 </Col>
             </Row>
         </Container>        
