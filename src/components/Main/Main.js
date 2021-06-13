@@ -1,17 +1,16 @@
 import './Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row } from 'react-bootstrap';
 import NavBar from '../NavBar/NavBar';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 function Main() {
   return (
-    <Container fluid>
-      <Row>
-        <NavBar />
-        <ItemListContainer greeting="Bienvenido a la tienda"></ItemListContainer>
-      </Row>
-    </Container>
+    <>
+      <NavBar />
+      <ItemListContainer greeting="Bienvenido a la tienda"></ItemListContainer>
+      
+    </>
   );
 }
 

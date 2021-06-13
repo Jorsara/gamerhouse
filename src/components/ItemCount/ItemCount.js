@@ -14,11 +14,6 @@ function ItemCount ({initial, stock, onAdd}) {
             setContador(contador + 1);
         }            
     };
-    function agregar(){
-        if(stock !== 0 && contador <= stock){
-            onAdd(contador);
-        }
-    };
     return (
         <>
             <InputGroup className="mt-4 text-center">
@@ -30,7 +25,7 @@ function ItemCount ({initial, stock, onAdd}) {
                     <Button variant="outline-secondary" onClick={()=>sumar()}>+</Button>
                 </InputGroup.Append>
             </InputGroup>  
-            <Button variant="outline-secondary" className="mt-2" onClick={()=>agregar()}>Agregar al carrito</Button>
+            <Button variant="outline-secondary" className="mt-2" onClick={()=>onAdd()}>Agregar al carrito</Button>
         </>
     );
 }
