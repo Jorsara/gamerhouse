@@ -9,7 +9,7 @@ function Main() {
     <>
       <NavBar />
       <ItemListContainer greeting="Bienvenido a la tienda"></ItemListContainer>
-      
+      <ItemDetailContainer />
     </>
   );
 }
