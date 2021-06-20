@@ -11,7 +11,8 @@ function ItemDetailContainer () {
           title: 'Producto 1',
           description: 'Lorem impsum',
           price: 200,
-          pictureUrl: picture
+          pictureUrl: picture,
+          stock: 4
         }
     ];
 
@@ -34,7 +35,7 @@ function ItemDetailContainer () {
             console.log(error.message);
             return "Valor por defecto";
           });
-      }, []);
+      });
     
     return (
         <div className="itemList">
@@ -47,6 +48,7 @@ function ItemDetailContainer () {
                     description={item.description}
                     price={item.price}
                     pictureUrl={item.pictureUrl}
+                    stock={item.stock}
                 />
                 );
             })}

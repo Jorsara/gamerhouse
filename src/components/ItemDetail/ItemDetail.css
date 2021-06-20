@@ -1,3 +1,6 @@
 .imagenProd{
     max-width:100%;
 }
+.prodDesc .input-group{
+    justify-content: start;
+}

@@ -12,21 +12,24 @@ function ItemList () {
           title: 'Producto 1',
           description: 'Lorem impsum',
           price: 200,
-          pictureUrl: picture
+          pictureUrl: picture,
+          stock: 4
         },
         {
           id: 2,
           title: 'Producto 2',
           description: 'Lorem impsum',
           price: 200,
-          pictureUrl: picture
+          pictureUrl: picture,
+          stock: 5
         },
         {
           id: 3,
           title: 'Producto 3',
           description: 'Lorem impsum',
           price: 200,
-          pictureUrl: picture
+          pictureUrl: picture,
+          stock: 2
         }
     ];  
 
@@ -49,12 +52,12 @@ function ItemList () {
             console.log(error.message);
             return "Valor por defecto";
           });
-      }, []);
+      });
 
     return (
         <div className="itemList">
             {items.map(producto => {
-                return <Item key={producto.id} id={producto.id} title={producto.title} description={producto.description} price={producto.price} pictureUrl={producto.pictureUrl} />;
+                return <Item key={producto.id} id={producto.id} title={producto.title} description={producto.description} price={producto.price} pictureUrl={producto.pictureUrl} stock={producto.stock} />;
             })}     
         </div>
     );

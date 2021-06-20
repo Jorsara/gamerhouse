@@ -20,7 +20,7 @@ function ItemCount ({initial, stock, onAdd}) {
                 <InputGroup.Prepend>
                     <Button variant="outline-secondary" onClick={()=>restar()}>-</Button>
                 </InputGroup.Prepend>
-                <input className="form-control" value={contador} readOnly id="cantidad" />
+                <input className="form-control" value={contador} readOnly className="cantidad" />
                 <InputGroup.Append>
                     <Button variant="outline-secondary" onClick={()=>sumar()}>+</Button>
                 </InputGroup.Append>

@@ -1,6 +1,5 @@
 import './ItemListContainer.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 
 function ItemListContainer (props) {
@@ -8,8 +7,7 @@ function ItemListContainer (props) {
         <Container>
             <Row>
                 <Col className="text-center">
-                    <h1>{props.greeting}</h1>
-                                      
+                    <h1>{props.greeting}</h1>                                      
                 </Col>
             </Row>
             <Row>
