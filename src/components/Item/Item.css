@@ -4,6 +4,11 @@
 }
 .itemContainer {
     margin: 0 10px;
+    width: 33.33%;
+}
+.itemContainer a{
+    color: #000;
+    text-decoration: none;
 }
 .itemContainer p{
     margin-bottom:5px;
