@@ -4,8 +4,7 @@ El proyecto se basa en una tienda online de videojuegos llamada "Gamer House" la
 
 ## GIF de muestra
 
-In the project directory, you can run:
-
+![](https://github.com/Jorsara/gamerhouse/blob/main/src/assets/img/muestra.gif?raw=true)
 
 ## Dependencias extra
 
