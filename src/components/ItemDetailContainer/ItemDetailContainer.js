@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 function ItemDetailContainer () {
   const { id } = useParams();
   const [items, setItems] = useState([]);
+  const [isLoading, setisLoading] = useState(true);
   const productos = [
     {
       id: 1,
@@ -45,11 +46,9 @@ function ItemDetailContainer () {
       .then(
         (data) => {
           if(id){
-            data.forEach(element => {
-              if(element.id == id){
-                setItems(element);
-              }
-            });
+            const found = data.find(element => element.id == id);
+            setItems(found);
+            if(found){ setisLoading(false); }            
           }
         },
         (error) => {
@@ -67,15 +66,17 @@ function ItemDetailContainer () {
   
   return (
     <div className="itemList">
-      <ItemDetail
-        key={items.id}
-        id={items.id}
-        title={items.title}
-        description={items.description}
-        price={items.price}
-        pictureUrl={items.pictureUrl}
-        stock={items.stock}
-      />
+      {isLoading ? <p>Cargando...</p> : 
+        <ItemDetail
+          key={items.id}
+          id={items.id}
+          title={items.title}
+          description={items.description}
+          price={items.price}
+          pictureUrl={items.pictureUrl}
+          stock={items.stock}
+        />
+      }
     </div>
   );
 }
