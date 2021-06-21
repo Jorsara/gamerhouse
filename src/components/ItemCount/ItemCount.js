@@ -25,7 +25,7 @@ function ItemCount ({initial, stock, onAdd}) {
                     <Button variant="outline-secondary" onClick={()=>sumar()}>+</Button>
                 </InputGroup.Append>
             </InputGroup>  
-            <Button variant="outline-secondary" className="mt-2" onClick={()=>onAdd()}>Agregar al carrito</Button>
+            <Button variant="outline-secondary" className="mt-2" onClick={() => onAdd(contador)}>Agregar al carrito</Button>
         </>
     );
 }
