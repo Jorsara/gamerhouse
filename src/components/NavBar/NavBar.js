@@ -22,8 +22,9 @@ function NavBar() {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="/category/2">Sale</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#">FAQs</Nav.Link>
-                        <Nav.Link href="#">Contacto</Nav.Link>
+                        <NavLink to="#" className="nav-link" activeClassName="active">FAQs</NavLink>
+                        <NavLink to="#" className="nav-link" activeClassName="active">Contacto</NavLink>
+                        <NavLink to="/cart" className="nav-link" activeClassName="active">Carrito</NavLink>    
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Buscar..." className="mr-sm-2" />

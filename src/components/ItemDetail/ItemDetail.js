@@ -3,11 +3,11 @@ import {Row, Col, Container, Button} from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import React, { useState, useContext } from 'react';
 import {Link} from 'react-router-dom';
-import ThemeContext from '../../context/ThemeContext';
+import CartContext from '../../context/CartContext';
 
 function ItemDetail ({id, title, description, price, pictureUrl, stock}) {
     const [cartCount, setCartCount] = useState(0);
-    const { addToCart, cart, clear, removeFromCart, isInCart } = useContext(ThemeContext);
+    const { addToCart, cart, clear, removeFromCart, isInCart } = useContext(CartContext);
 
     function onAdd(cantidad){
         setCartCount(cantidad);

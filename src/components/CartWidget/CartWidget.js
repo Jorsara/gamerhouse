@@ -1,18 +1,17 @@
 import './CartWidget.css';
-import {Nav} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import carrito from '../../assets/icons/carrito.png';
 import React, { useContext } from 'react';
-import ThemeContext from '../../context/ThemeContext';
+import CartContext from '../../context/CartContext';
 
 
 function CartWidget() {
-    const { cart } = useContext(ThemeContext);
-    const cartCounter = cart.length;
+    const { cantItems } = useContext(CartContext);
     return (
-        <Nav.Link href="/cart" className={`${cart.length === 0 ? 'cartWidget cartVacio' : 'cartWidget' }`}>
+        <NavLink to="/cart" className={`${cantItems === 0 ? 'nav-link cartWidget cartVacio' : 'nav-link cartWidget' }`}>
             <img src={carrito} alt="carrito"></img>
-            <div className="cartCounter">{cartCounter}</div>
-        </Nav.Link>
+            <div className="cartCounter">{cantItems}</div>
+        </NavLink>
     );
 }
   

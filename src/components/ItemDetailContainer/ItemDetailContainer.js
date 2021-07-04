@@ -39,7 +39,7 @@ function ItemDetailContainer () {
     }
   ];
 
-  const getItems = new Promise((resolve, reject) => {setTimeout(() => resolve(productos), 2000);});
+  const getItems = new Promise((resolve, reject) => {setTimeout(() => resolve(productos), 1000);});
 
   useEffect(() => {
     getItems

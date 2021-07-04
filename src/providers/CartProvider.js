@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import ThemeContext from '../context/ThemeContext';
+import CartContext from '../context/CartContext';
 
-export default function CartContext({ defaultValue = [], children }) {
+export default function CartProvider({ defaultValue = [], children }) {
   const [cart, setCart] = useState(defaultValue);
+  const [cartTotal, setCartTotal] = useState(0);
+  const [cantItems, setCantItems] = useState(0);
 
   function getFromCart(id) {
     return cart.find(x => x.item.id === id);
@@ -19,6 +21,7 @@ export default function CartContext({ defaultValue = [], children }) {
     }
     setCart([...cart, obj]);
     console.log('Elemento agregado al carrito.');
+    setCantItems(cantItems + 1);
   }
 
   function removeFromCart(id){
@@ -27,6 +30,7 @@ export default function CartContext({ defaultValue = [], children }) {
     cart.splice(index, 1);
     }
     console.log('Un producto eliminado del carrito.')
+    setCantItems(cantItems - 1);
   }
 
   function clear() {
@@ -35,10 +39,8 @@ export default function CartContext({ defaultValue = [], children }) {
   }
 
   return (
-    <ThemeContext.Provider
-      value={{ cart, addToCart, clear, removeFromCart, getFromCart }}
-    >
+    <CartContext.Provider value={{ cart, addToCart, clear, removeFromCart, getFromCart, cartTotal, setCartTotal, cantItems }}>
       {children}
-    </ThemeContext.Provider>
+    </CartContext.Provider>
   );
 }
