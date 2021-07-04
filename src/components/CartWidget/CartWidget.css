@@ -1,0 +1,22 @@
+.cartCounter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #72ea24;
+    color: #3f2a7b;
+    height: 23px;
+    width: 23px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 2px;
+}
+.cartWidget {
+    position: relative;
+}
+.cartVacio {
+    visibility: hidden;
+}

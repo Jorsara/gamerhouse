@@ -43,12 +43,12 @@ function ItemDetail ({id, title, description, price, pictureUrl, stock}) {
                         <ItemCount stock={stock} initial={1} onAdd={onAdd}/>  
                     )}                    
 
-                    {/* Test de funcionalidades del carrito.}                    
-                    <Button onClick={()=> console.log(cart)}>Ver Cart</Button>
+                    {/*
+                    <Button onClick={()=> {console.log(cart); console.log(cart.length)}}>Ver Cart</Button>
                     <Button onClick={() => addToCart({item:{id:2, title: 'test'},quantity:2})}>Agregar producto duplicado</Button>
                     <Button onClick={() => removeFromCart(2)}>Eliminar</Button>
                     <Button onClick={()=> clear()}>Clear</Button>
-                    {*/}
+                    */}
 
                 </Col>   
             </Row> 

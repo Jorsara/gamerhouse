@@ -36,7 +36,7 @@ export default function CartContext({ defaultValue = [], children }) {
 
   return (
     <ThemeContext.Provider
-      value={{ cart, addToCart, clear, removeFromCart }}
+      value={{ cart, addToCart, clear, removeFromCart, getFromCart }}
     >
       {children}
     </ThemeContext.Provider>
