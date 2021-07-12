@@ -36,7 +36,7 @@ function ItemListContainer (props) {
         setLoading(false);
       }
     });
-  }, []);
+  }, [id]);
   
   return (
     <Container>
