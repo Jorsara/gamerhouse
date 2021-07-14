@@ -16,15 +16,16 @@ function NavBar() {
                         <Nav className="mr-auto">
                         <NavLink to="/" className="nav-link" activeClassName="active">Inicio</NavLink>                        
                         <NavDropdown title="Tienda" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/category/categoria">Juegos para PC</NavDropdown.Item>
-                            <NavDropdown.Item href="/category/categoria2">Juegos PS4 Digital</NavDropdown.Item>
-                            <NavDropdown.Item href="/category/categoria">Juegos PS5 Digital</NavDropdown.Item>
+                            <NavDropdown.Item><NavLink to="/category/categoria">Juegos para PC</NavLink></NavDropdown.Item>
+                            <NavDropdown.Item><NavLink to="/category/categoria2">Juegos PS4 Digital</NavLink></NavDropdown.Item>
+                            <NavDropdown.Item><NavLink to="/category/categoria">Juegos PS5 Digital</NavLink></NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="/category/categoria2">Sale</NavDropdown.Item>
+                            <NavDropdown.Item><NavLink to="/category/categoria2">Sale</NavLink></NavDropdown.Item>
                         </NavDropdown>
                         <NavLink to="#" className="nav-link" activeClassName="active">FAQs</NavLink>
                         <NavLink to="#" className="nav-link" activeClassName="active">Contacto</NavLink>
                         <NavLink to="/cart" className="nav-link" activeClassName="active">Carrito</NavLink>    
+                        <NavLink to="/checkout" className="nav-link"  activeClassName="active">Finalizar Compra</NavLink>
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Buscar..." className="mr-sm-2" />

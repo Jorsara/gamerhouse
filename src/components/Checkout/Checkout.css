@@ -1,0 +1,14 @@
+.checkoutTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkoutForm {
+    margin-top: 20px;
+}
+.checkoutForm input {
+    margin-bottom: 15px;
+}
+.compraFinalizada {
+    width: 100%;
+}
