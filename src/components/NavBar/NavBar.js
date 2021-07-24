@@ -16,14 +16,9 @@ function NavBar() {
                         <Nav className="mr-auto">
                         <NavLink to="/" className="nav-link" activeClassName="active">Inicio</NavLink>                        
                         <NavDropdown title="Tienda" id="basic-nav-dropdown">
-                            <NavDropdown.Item><NavLink to="/category/categoria">Juegos para PC</NavLink></NavDropdown.Item>
-                            <NavDropdown.Item><NavLink to="/category/categoria2">Juegos PS4 Digital</NavLink></NavDropdown.Item>
-                            <NavDropdown.Item><NavLink to="/category/categoria">Juegos PS5 Digital</NavLink></NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item><NavLink to="/category/categoria2">Sale</NavLink></NavDropdown.Item>
+                            <NavLink className="dropdown-item" to="/category/pc">Juegos para PC</NavLink>
+                            <NavLink className="dropdown-item" to="/category/ps4">Juegos PS4 Digital</NavLink>
                         </NavDropdown>
-                        <NavLink to="#" className="nav-link" activeClassName="active">FAQs</NavLink>
-                        <NavLink to="#" className="nav-link" activeClassName="active">Contacto</NavLink>
                         <NavLink to="/cart" className="nav-link" activeClassName="active">Carrito</NavLink>    
                         <NavLink to="/checkout" className="nav-link"  activeClassName="active">Finalizar Compra</NavLink>
                         </Nav>

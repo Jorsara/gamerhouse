@@ -25,10 +25,9 @@ function Item ({id, title, description, price, imageId, stock}) {
         <div className="itemContainer">
             <Link to={`/item/${id}`}>
                 <img className="img-prod" src={photo}  alt="Producto" />
-                <p>ID: {id}</p>
-                <p>Title: {title}</p>
-                <p>Description: {description}</p>
-                <p>Price: {price}</p>    
+                <h4 className="title-prod">{title}</h4>
+                <p className="desc-prod">{description}</p>
+                <p className="price-prod">${price}</p>    
             </Link>        
             <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
         </div>        

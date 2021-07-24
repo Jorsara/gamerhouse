@@ -7,11 +7,12 @@ import CartContext from '../../context/CartContext';
 
 function ItemDetail ({id, title, description, price, imageId, stock}) {
     const [cartCount, setCartCount] = useState(0);
-    const { addToCart } = useContext(CartContext);
+    const [mostrarMsj, setMostrarMsj] = useState(0);
+    const { addToCart, isInCart } = useContext(CartContext);
     const photo = require(`../../assets/img/${imageId}`).default;
 
     function onAdd(cantidad){
-        setCartCount(cantidad);
+        setMostrarMsj(1);
         let addItem = {
             item: {
                 id: id,
@@ -23,7 +24,13 @@ function ItemDetail ({id, title, description, price, imageId, stock}) {
             },
             quantity: cantidad
         };
-        addToCart(addItem);
+        if(isInCart(addItem.item)){
+            setMostrarMsj(2)
+        }
+        else{
+            setCartCount(cantidad);        
+            addToCart(addItem);
+        }
     }
     return (
         <Container className="prodDesc">
@@ -32,12 +39,16 @@ function ItemDetail ({id, title, description, price, imageId, stock}) {
                     <img className="imagenProd" src={photo} alt="Producto" />
                 </Col>
                 <Col>
-                    <h2>{title}</h2>
-                    <p>{description}</p>
-                    <p>Precio: ${price}</p>
-                    {cartCount >= 1 ? (
+                    <h2 className="title-prod">{title}</h2>
+                    <p className="desc-prod">{description}</p>
+                    <p className="price-prod">${price}</p>
+                    {mostrarMsj !== 0 ? (
                         <>
-                            <p>Fueron agregados {cartCount} items al carrito</p>
+                            { mostrarMsj === 1 ? (
+                                <p id="mensaje-prod">Fueron agregados {cartCount} items al carrito.</p>
+                            ) : (
+                                <p id="mensaje-prod">El producto ya esta en el carrito.</p>
+                            )}
                             <Link to="/cart" className="mt-2 btn btn-outline-secondary">Terminar compra</Link>
                         </>
                     ) : (

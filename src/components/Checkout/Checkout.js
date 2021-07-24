@@ -19,38 +19,44 @@ function Checkout() {
     const [loading, setLoading] = useState(false);
     const [pedidoRealizado, setPedidoRealizado] = useState('');
     const saveOrder = () => {
-        setLoading(true);
-        const db = getFirestore();
-        const order = db.collection('orders');
         let inputName = document.getElementById('name').value;
         let inputPhone = document.getElementById('email').value;
         let inputEmail = document.getElementById('phone').value;
-        const newOrder = {
-        buyer: {
-            email: inputEmail,
-            name: inputName,
-            phone: inputPhone
-        },
-        date: firebase.firestore.Timestamp.fromDate(new Date()),
-        total: cartTotal,
-        items: cart
-        };
-        order
-        .add(newOrder)
-        .then(({ id }) => {
-            setLoading(false);            
-            setPedidoRealizado(id);
-        })
-        .catch(error => {
-            setLoading(false);
-            console.log(error);
-        });
+        if(inputName === "" || inputPhone === "" || inputEmail === ""){
+            document.getElementById('error-checkout').classList.add("active");
+        }
+        else {
+            document.getElementById('error-checkout').classList.remove("active");
+            setLoading(true);
+            const db = getFirestore();
+            const order = db.collection('orders');
+            const newOrder = {
+            buyer: {
+                email: inputEmail,
+                name: inputName,
+                phone: inputPhone
+            },
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            total: cartTotal,
+            items: cart
+            };
+            order
+            .add(newOrder)
+            .then(({ id }) => {
+                setLoading(false);            
+                setPedidoRealizado(id);
+            })
+            .catch(error => {
+                setLoading(false);
+                console.log(error);
+            });
+        }
     };
     return (
         <Container className="checkoutContainer">
             <Row>
                 <Col>
-                <h2 className="text-center mt-4 mb-2">Finalizar Compra</h2>
+                <h2 className="text-center finalizar-tit">Finalizar Compra</h2>
                     {cart.length === 0 ? 
                         <div className="cartSinItems">
                             <h4>No hay items en el carrito para comprar.</h4>
@@ -58,6 +64,8 @@ function Checkout() {
                         </div>
                     : 
                         <div className="checkoutForm">   
+                            <h4 className="text-center mb-2">Completa tus datos para terminar el proceso de compra.</h4>
+                            <p id="error-checkout">Todos los campos son obligatorios para continuar.</p>
                             {pedidoRealizado==='' &&                      
                                 <form className="form-group">
                                     <input className="form-control" id="name" placeholder="Nombre" />
@@ -67,7 +75,7 @@ function Checkout() {
                             }
                             <div className="checkoutTotal">
                                 {pedidoRealizado==='' &&       
-                                    <h5>Total de la orden: {cartTotal}</h5>      
+                                    <h5>Total de la orden: <b>${cartTotal}</b></h5>      
                                 }                          
                                 {loading ? 
                                     <div className="loader">Cargando...</div> 

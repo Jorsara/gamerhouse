@@ -4,3 +4,13 @@
 .prodDesc .input-group{
     justify-content: start;
 }
+.prodDesc p.desc-prod {
+    display: block;
+    text-overflow: unset;
+}
+h2.title-prod {
+    color: #3c0080;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 700;
+}

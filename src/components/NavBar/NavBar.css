@@ -7,3 +7,17 @@
 .navbar-light .navbar-nav .nav-link {
     color: rgb(2 2 2);
 }
+.dropdown-menu.show {
+    padding: 0;
+}
+a.dropdown-item {
+    text-decoration: none;
+    color: #333333;
+    padding: 10px 20px;
+    display: block;
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #dadada;
+}
